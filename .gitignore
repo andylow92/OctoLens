@@ -169,3 +169,14 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Local logs
+*.log
+
+# CSV exports
+*.csv
+
+# JSON exports
+*.json
+
+
