@@ -22,43 +22,49 @@ Requirements
         (Optional) pytest or other frameworks if you plan to add tests
 
 Installation
-
-    Clone or Download this repository:
-
+ ##Clone or Download this repository:
+```
 git clone https://github.com/YOUR_USERNAME/OctoLens.git
 cd OctoLens
-
-Create and activate a virtual environment (optional but recommended):
-
+```
+## Create and activate a virtual environment (optional but recommended):
+```
 python -m venv venv
+```
+```
 source venv/bin/activate  # On Linux/Mac
+```
+```
 venv\Scripts\activate     # On Windows
+```
 
 Install dependencies:
-
+```
     pip install -r requirements.txt
+```
 
 Usage
 Environment Variables
 
 OctoLens expects three environment variables for authentication and identification of the repository:
-
+```
     GITHUB_TOKEN: Your GitHub personal access token.
     GITHUB_OWNER: The owner (username or organization) of the repository.
     GITHUB_REPO: The name of the repository.
-
-For example:
-
+```
+## For example:
+```
 export GITHUB_TOKEN=ghp_12345abcdef...
 export GITHUB_OWNER=my-org
 export GITHUB_REPO=my-repo
+```
+## Command-Line Arguments
 
-Command-Line Arguments
+## Run the script with:
 
-Run the script with:
-
+```
 python github_metrics.py [--format FORMAT] [--log-level LEVEL] [--output-dir DIRECTORY]
-
+```
     --format: Output format for metrics.
         Valid values: csv, json, both.
         Defaults to csv.
@@ -68,26 +74,32 @@ python github_metrics.py [--format FORMAT] [--log-level LEVEL] [--output-dir DIR
     --output-dir: Directory where exported files and logs will be saved.
         Defaults to . (current directory).
 
-Examples
-Example 1: Default CSV Export
-
+##Examples
+### Example 1: Default CSV Export
+```
 # Set environment variables
 export GITHUB_TOKEN=ghp_12345abcdef...
 export GITHUB_OWNER=my-org
 export GITHUB_REPO=my-repo
-
+```
+```
 # Run the script (CSV only, INFO-level logs to current dir)
 python github_metrics.py
+```
 
-Example 2: Export Both CSV & JSON, DEBUG-Level Logs
+### Example 2: Export Both CSV & JSON, DEBUG-Level Logs
 
+```
 # Set environment variables
 export GITHUB_TOKEN='your_token'
 export GITHUB_OWNER='owner'
 export GITHUB_REPO='repo'
+```
 
 # with options
+```
 python github_metrics.py --format json --output-dir ./metrics --log-level DEBUG
+```
 
 This will:
 
